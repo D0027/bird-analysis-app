@@ -50,11 +50,24 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 #MainMenu { visibility: hidden; }
 footer    { visibility: hidden; }
 
-/* Hide header but keep sidebar toggle */
-div[data-testid="stToolbar"] { visibility: hidden; }
+/* Hide header decorations but always keep sidebar toggle visible */
 div[data-testid="stDecoration"] { visibility: hidden; }
 div[data-testid="stStatusWidget"] { visibility: hidden; }
-[data-testid="collapsedControl"] { visibility: visible !important; display: flex !important; }
+div[data-testid="stToolbar"] { right: 2rem; }
+div[data-testid="stToolbarActions"] { visibility: hidden; }
+
+header[data-testid="stHeader"] {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+[data-testid="collapsedControl"],
+[data-testid="stSidebarCollapsedControl"],
+button[kind="header"] {
+    visibility: visible !important;
+    display: flex !important;
+    opacity: 1 !important;
+}
 
 /* HERO */
 .hero-banner {
